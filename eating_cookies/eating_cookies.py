@@ -19,8 +19,10 @@ import sys
 def eating_cookies(n, cache=None):
       if cache is None or type(cache) == list:
             cache = {0: 1, 1: 1, 2: 2}
+      # If n is less than 0, it will return 0.
       if n < 0:
             return 0
+      # Otherwise if n is not in cache, then cache[n] will breakdown the amount of cookies (like a tree with roots).
       elif n not in cache:
             cache[n] = eating_cookies(n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n -3, cache)
       return cache[n]
