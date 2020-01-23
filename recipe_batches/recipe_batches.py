@@ -3,16 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  # Create an empty list(array)
+  # Create an empty list(array), because we don't know what's inside the batches. 
   potent_batches = []
   
-  # Create a for loop of an item in recipe
+  # Create a for loop of an item in recipe, since we don't have the ingredient.
+  # Need this step to pass the one at the bottom of this page where the recipe calls for more butter then what the user has.
   for item in recipe:
+        
     # If an item is not in the ingredients return 0(none)
     if item not in ingredients:
         return 0
+      
     # If the item in ingredients is divided by the item in recipes is greater than 0.
     if ingredients[item] // recipe[item] > 0:
+          
       # Append potent_batches with the ingredients[item] // recipe[item], if order to find the amount we need for the recipe.
       potent_batches.append(ingredients[item] // recipe[item])
       
